@@ -26,3 +26,16 @@
         left: calc(50% - 250px);
     }
 }
+
+.Modal-Title {
+    display: inline-block;
+}
+
+.fas.fa-times {
+    float: right;
+
+}
+
+.fas.fa-times:hover {
+    cursor: pointer;
+}

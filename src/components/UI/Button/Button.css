@@ -1,11 +1,23 @@
 .Button {
     background-color: cadetblue;
+    border-radius: 5px;
     border: none;
     color: white;
     outline: none;
     cursor: pointer;
     font: inherit;
-    padding: 10px;
-    margin: 10px;
+    padding: 10px 20px;
+    margin: 0 auto;
+    display: block;
     font-weight: bold;
+}
+
+.Button:hover{
+    background-color: #282c34;
+}
+
+
+.Button-Wrapper{
+    width: 100%;
+    margin-top: 100px;
 }

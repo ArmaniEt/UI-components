@@ -22,12 +22,19 @@ class App extends Component {
         this.setState(state);
     };
 
+    closeModal = () => {
+      let state = {...this.state};
+      state.modalShow = false;
+      this.setState(state);
+    };
+
     render() {
         return (
             <div>
                 <Modal
                     show={this.state.modalShow}
                     title="Some modal Title"
+                    close={this.closeModal}
                 />
                 <Button
                     clicked={this.openModal}

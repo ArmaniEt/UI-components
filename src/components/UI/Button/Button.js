@@ -3,7 +3,7 @@ import './Button.css';
 
 function Button(props) {
     return(
-        <div>
+        <div className="Button-Wrapper">
             <button
                 onClick={props.clicked}
                 className='Button'
