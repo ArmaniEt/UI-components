@@ -1,14 +1,40 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
+import Modal from './components/UI/Modal/Modal';
+import Button from './components/UI/Button/Button';
+
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
+    constructor(props){
+        super(props);
 
-      </div>
-    );
-  }
+        this.state = {};
+
+        this.state.modalShow = false;
+    }
+
+
+
+    openModal = () => {
+        let state = {...this.state};
+        state.modalShow = true;
+        this.setState(state);
+    };
+
+    render() {
+        return (
+            <div>
+                <Modal
+                    show={this.state.modalShow}
+                    title="Some modal Title"
+                />
+                <Button
+                    clicked={this.openModal}
+                />
+            </div>
+        );
+    }
 }
 
 export default App;
