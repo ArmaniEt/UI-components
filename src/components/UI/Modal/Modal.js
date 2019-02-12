@@ -11,6 +11,10 @@ const Modal = (props) => {
               <i onClick={props.close} className="fas fa-times"> </i>
               <hr/>
               <p>Some modal content</p>
+              {props.buttons.map((item, index) =>
+                  <button key={index} onClick={item.clicked} className={item.type}>{item.label}</button>
+              )}
+
           </div>
       </div>
   )

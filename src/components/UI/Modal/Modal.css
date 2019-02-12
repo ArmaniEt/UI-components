@@ -39,3 +39,31 @@
 .fas.fa-times:hover {
     cursor: pointer;
 }
+
+.primary {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    margin: 5px;
+    outline: none;
+    background-color: #007bff;
+}
+
+.primary:hover{
+    cursor: pointer;
+}
+
+.danger {
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+    margin: 5px;
+    outline: none;
+    padding: 10px;
+}
+
+.danger:hover {
+    cursor: pointer;
+}
