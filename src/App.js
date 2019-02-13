@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import Modal from './components/UI/Modal/Modal';
 import Button from './components/UI/Button/Button';
+import Alert from './components/UI/Alert/Alert';
 
 
 
@@ -46,6 +47,10 @@ class App extends Component {
                 />
                 <Button
                     clicked={this.openModal}
+                />
+                <Alert
+                    type="warning"
+                    // handler goes here
                 />
             </div>
         );

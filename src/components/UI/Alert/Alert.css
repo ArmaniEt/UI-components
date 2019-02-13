@@ -1,0 +1,25 @@
+.Alert-Wrapper {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.warning {
+    background-color: #dc3545;
+}
+
+.success {
+    background-color: #4CAF50;
+}
+
+
+.Alert-Text {
+    margin: 0;
+    padding: 20px 15px;
+    color: white;
+    text-align: left;
+}
+
+
