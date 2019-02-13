@@ -4,26 +4,19 @@ import Modal from './components/UI/Modal/Modal';
 import Button from './components/UI/Button/Button';
 
 
-const BUTTON_CONFIGS = [
-    {type: 'primary', label: 'Continue', clicked: undefined}, //add handler here
-    {type: 'danger', label: 'Close', clicked: undefined}
-];
 
 
 class App extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {};
-        this.state.buttons = BUTTON_CONFIGS;
-        this.state.buttons[0].clicked = this.usualAlert;
-        this.state.buttons[1].clicked = this.closeModal;
         this.state.modalShow = false;
     }
 
 
     usualAlert = () => {
-      alert('This is alert message');
+        alert('This is alert message');
     };
 
 
@@ -34,9 +27,9 @@ class App extends Component {
     };
 
     closeModal = () => {
-      let state = {...this.state};
-      state.modalShow = false;
-      this.setState(state);
+        let state = {...this.state};
+        state.modalShow = false;
+        this.setState(state);
     };
 
     render() {
@@ -46,7 +39,10 @@ class App extends Component {
                     show={this.state.modalShow}
                     title="Some modal Title"
                     close={this.closeModal}
-                    buttons={this.state.buttons}
+                    buttons={[
+                        {type: 'primary', label: 'Continue', clicked: this.usualAlert}, //add handler here
+                        {type: 'danger', label: 'Close', clicked: this.closeModal}
+                    ]}
                 />
                 <Button
                     clicked={this.openModal}
