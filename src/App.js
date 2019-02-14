@@ -5,19 +5,20 @@ import Button from './components/UI/Button/Button';
 import Alert from './components/UI/Alert/Alert';
 
 
-
-
 class App extends Component {
     constructor(props) {
         super(props);
 
         this.state = {};
+        this.state.alertShow = false;
         this.state.modalShow = false;
     }
 
 
-    usualAlert = () => {
-        alert('This is alert message');
+    customAlert = () => {
+        let state = {...this.state};
+        state.alertShow = true;
+        this.setState(state);
     };
 
 
@@ -33,24 +34,30 @@ class App extends Component {
         this.setState(state);
     };
 
+    closeAlert = () => {
+        let state = {...this.state};
+        state.alertShow = false;
+        this.setState(state);
+    };
+
     render() {
+        let buttons = [{type: 'primary', label: 'Continue', clicked: this.customAlert}, //add handler here
+            {type: 'danger', label: 'Close', clicked: this.closeModal}];
         return (
             <div>
                 <Modal
                     show={this.state.modalShow}
                     title="Some modal Title"
                     close={this.closeModal}
-                    buttons={[
-                        {type: 'primary', label: 'Continue', clicked: this.usualAlert}, //add handler here
-                        {type: 'danger', label: 'Close', clicked: this.closeModal}
-                    ]}
+                    buttons={buttons}
                 />
                 <Button
                     clicked={this.openModal}
                 />
                 <Alert
-                    type="warning"
-                    // handler goes here
+                    type="warning" // add type here, properties for alert: 'warning' or 'success'
+                    show={this.state.alertShow}
+                    dismiss={this.closeAlert} // handler goes here
                 />
             </div>
         );
