@@ -40,6 +40,12 @@ class App extends Component {
         this.setState(state);
     };
 
+    setTimer = (interval) => {
+        if (interval > 0) {
+            setInterval(this.closeAlert, interval);
+        }
+    };
+
     render() {
 
         // buttons configs
@@ -62,6 +68,7 @@ class App extends Component {
                     isDismiss={isDisMissAble} // this is a toggle for closing alert
                     // (clicked on whole element or if property false on close icon)
 
+                    timer={this.setTimer} // timer for auto-closed alert
                     type="primary" // add type here, properties for alert: 'warning', 'success', 'primary'
                     show={this.state.alertShow}
                     dismiss={this.closeAlert} // this handler can be not passed, then close button not be shown

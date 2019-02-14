@@ -17,10 +17,13 @@ function Alert(props) {
             break;
     }
 
+
     return (
         <div onClick={props.isDismiss ? props.dismiss : null} className={'Alert' + (props.show ? ' Alert-Show': '') + ' ' + alertType}>
             {props.children}
             {props.isDismiss ? null : <i onClick={props.dismiss} className="fas fa-times for_alert"> </i>}
+
+            {props.timer(0)}
         </div>
 
     )
