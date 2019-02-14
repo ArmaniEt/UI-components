@@ -24,12 +24,10 @@
     background-color: #4CAF50;
 }
 
-.Alert-Text {
-    margin: 0;
-    padding: 20px 15px;
-    color: white;
-    text-align: left;
+.primary_alert {
+    background-color: #81d8d0 ;
 }
+
 
 .fas.fa-times.for_alert {
     padding: 8px;

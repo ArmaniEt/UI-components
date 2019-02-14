@@ -55,10 +55,10 @@ class App extends Component {
                     clicked={this.openModal}
                 />
                 <Alert
-                    type="warning" // add type here, properties for alert: 'warning' or 'success'
+                    type="primary" // add type here, properties for alert: 'warning', 'success', 'primary'
                     show={this.state.alertShow}
-                    dismiss={this.closeAlert} // handler goes here
-                />
+                    dismiss={this.closeAlert} // this handler can be not passed, then close button not be shown
+                ><p className="Alert-Text">This is warning type alert!</p></Alert>
             </div>
         );
     }
