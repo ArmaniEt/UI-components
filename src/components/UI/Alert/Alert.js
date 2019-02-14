@@ -18,13 +18,15 @@ function Alert(props) {
     }
 
     return (
-        <div className={'Alert' + (props.show ? ' Alert-Show': '') + ' ' + alertType}>
+        <div onClick={props.isDismiss ? props.dismiss : null} className={'Alert' + (props.show ? ' Alert-Show': '') + ' ' + alertType}>
             {props.children}
-            {props.dismiss === undefined ? null : <i onClick={props.dismiss} className="fas fa-times for_alert"> </i>}
+            {props.isDismiss ? null : <i onClick={props.dismiss} className="fas fa-times for_alert"> </i>}
         </div>
 
     )
 
 }
 
+//{props.dismiss === undefined ? null : <i onClick={props.dismiss} className="fas fa-times for_alert"> </i>}
+// this line of code for closing alert with icon, or not close alert if dismiss props is not passed
 export default Alert;

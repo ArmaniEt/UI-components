@@ -41,8 +41,12 @@ class App extends Component {
     };
 
     render() {
+
+        // buttons configs
         let buttons = [{type: 'primary', label: 'Continue', clicked: this.customAlert}, //add handler here
             {type: 'danger', label: 'Close', clicked: this.closeModal}];
+
+        let isDisMissAble = true; //change this variable
         return (
             <div>
                 <Modal
@@ -55,6 +59,9 @@ class App extends Component {
                     clicked={this.openModal}
                 />
                 <Alert
+                    isDismiss={isDisMissAble} // this is a toggle for closing alert
+                    // (clicked on whole element or if property false on close icon)
+
                     type="primary" // add type here, properties for alert: 'warning', 'success', 'primary'
                     show={this.state.alertShow}
                     dismiss={this.closeAlert} // this handler can be not passed, then close button not be shown
